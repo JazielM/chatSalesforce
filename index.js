@@ -13,11 +13,11 @@ io.on('connection', function(socket){
   });
 });
 
-/*io.on('connection', function(socket){
+io.on('connection', function(socket){
   socket.on('chat message2', function(msg){
     io.emit('chat message2', msg);
   });
-});*/
+});
 
 http.listen(port, function(){
   console.log('listening on *:' + port);
