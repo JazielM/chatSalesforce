@@ -1,4 +1,4 @@
-/*var app = require('express')();
+var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
@@ -15,8 +15,8 @@ io.on('connection', function(socket){
 
 http.listen(port, function(){
   console.log('listening on *:' + port);
-});*/
-const express     = require('express');
+});
+/*const express     = require('express');
 const path        = require('path');
 const PORT        = process.env.PORT || 5000;
 const bodyParser  = require('body-parser');
@@ -41,11 +41,11 @@ app.post('/catchedMessages', function (req, res) {
     //io.emit('5569648556', JSON.stringify(req.body, null, 2));
     //io.emit('5569648556', JSON.parse(req.body.messages[0].body));
   //}
-
+*/
   //io.to(<socketid>).emit('private', /* ... */);
-  io.emit('chat message', req.body);
+ /*io.emit('chat message', req.body);
 
 
 
   res.end(JSON.stringify(req.body, null, 2));
-});
+});*/
