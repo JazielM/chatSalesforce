@@ -1,7 +1,7 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 5000;
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
@@ -9,7 +9,7 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
+    //io.emit('chat message', msg);
   });
 });
 
@@ -41,9 +41,8 @@ app.post('/catchedMessages', function (req, res) {
     //io.emit('5569648556', JSON.stringify(req.body, null, 2));
     //io.emit('5569648556', JSON.parse(req.body.messages[0].body));
   //}
-*/
-  //io.to(<socketid>).emit('private', /* ... */);
- /*io.emit('chat message', req.body);
+
+  io.emit('chat message', req.body);
 
 
 
