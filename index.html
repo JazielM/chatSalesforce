@@ -25,7 +25,9 @@
       $(function () {
         var socket = io();
         $('form').submit(function(){
-          socket.emit('chat message', $('#m').val());
+          socket.emit('chat message2', $('#m').val());
+          $('#messages').append($('<li>').text( $('#m').val()));
+          window.scrollTo(0, document.body.scrollHeight);
           $('#m').val('');
           return false;
         });
