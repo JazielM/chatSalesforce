@@ -9,7 +9,8 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
+     var temp = JSON.parse(msg);
+    io.emit(temp["usuarioId"], temp["msg"]);
   });
 });
 
