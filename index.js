@@ -1,6 +1,6 @@
 var app = require('express')();
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var io = require('socket.io')(server, { origins: '*:*'});
 var port = process.env.PORT || 3000;
 
 app.get('/', function(req, res){
@@ -9,7 +9,7 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
-    socket.emit('chat message', msg);
+    io.emit('chat message', msg);
   });
 });
 
