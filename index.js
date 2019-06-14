@@ -29,14 +29,11 @@ io.on('connection', function(socket){
 
     }
 
-    
+    console.log(conversation_json);
     io.emit(data.currentUserId+':'+data.usuarioId, return_data);
   });
 });
 
-function imprime_conversacion(){
-  console.log(conversation_json);
-}
 
 http.listen(port, function(){
   console.log('listening on *:' + port);
