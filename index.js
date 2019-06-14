@@ -17,6 +17,11 @@ io.on('connection', function(socket){
   if (err) throw err;
   console.log('Saved!');
 });
+
+    fs.open('mynewfile2.txt', 'w', function (err, file) {
+  if (err) throw err;
+  console.log('Saved!');
+});
     /* Aquí :: Verificar si existe la conversación */
 
     /* ----- */
