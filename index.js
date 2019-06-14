@@ -37,7 +37,7 @@ io.on('connection', function(socket){
       }; 
     }
     //process.stdout.write(conversation_json);
-    data["imprime"] = fs.readFileSync('example.txt', 'utf8');
+    //data["imprime"] = fs.readFileSync('example.txt', 'utf8');
     //console.log(JSON.stringify(conversation_json));
     //alert(JSON.stringify(conversation_json));
     io.emit(data.currentUserId+':'+data.usuarioId, JSON.stringify(data));
