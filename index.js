@@ -20,13 +20,20 @@ io.on('connection', function(socket){
     /* Comparamos si existe el */
     if("messages" in data){
       conversation_json["messages"].push({
-        "id_message" : conversation_json["id_conversation"] + ":" + conversation_json["messages"].length+1,
+        "id_message" : conversation_json["id_conversation"] + ":" + (conversation_json["messages"].length+1),
         "body" : data.msg,
         "sender_name" : data.currentUserName,
         "date" : data.date,
         "time" : data.time
       }); 
-
+    }else{
+      conversation_json["messages"]. = {
+        "id_message" : conversation_json["id_conversation"] + ":" + 0,
+        "body" : data.msg,
+        "sender_name" : data.currentUserName,
+        "date" : data.date,
+        "time" : data.time
+      }; 
     }
     //process.stdout.write(conversation_json);
     console.log(JSON.stringify(conversation_json));
