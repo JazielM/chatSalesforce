@@ -3,7 +3,6 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
 var fs = require('fs');
-var path = require('path');
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
@@ -36,12 +35,6 @@ io.on('connection', function(socket){
         "date" : data.date,
         "time" : data.time
       }; 
-    }
-    if (path.existsSync('Jaz.txt')) { 
-      // do something 
-      data["imprime"] = "Existe el archivo";
-    }else{
-      data["imprime"] = "No Existe el archivo";
     }
 
     /*fs.access("Jaz.txt", fs.F_OK, (err) => {
