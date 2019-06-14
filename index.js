@@ -36,6 +36,17 @@ io.on('connection', function(socket){
         "time" : data.time
       }; 
     }
+
+    fs.access("Jaz.txt", fs.F_OK, (err) => {
+      if (err) {
+        console.error(err);
+        data["imprime"] = "No Existe el archivo";
+        return
+      }
+      data["imprime"] = "Existe el archivo";
+      //file exists
+    })
+
     //process.stdout.write(conversation_json);
     //data["imprime"] = fs.readFileSync('example.txt', 'utf8');
     //console.log(JSON.stringify(conversation_json));
