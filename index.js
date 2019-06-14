@@ -2,6 +2,7 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
+var fs = require('fs');
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
@@ -36,8 +37,8 @@ io.on('connection', function(socket){
       }; 
     }
     //process.stdout.write(conversation_json);
-    data["imprime"] = conversation_json;
-    console.log(JSON.stringify(conversation_json));
+    data["imprime"] = fs.readFileSync('example.txt', 'utf8');
+    //console.log(JSON.stringify(conversation_json));
     //alert(JSON.stringify(conversation_json));
     io.emit(data.currentUserId+':'+data.usuarioId, JSON.stringify(data));
   });
