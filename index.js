@@ -36,8 +36,14 @@ io.on('connection', function(socket){
         "time" : data.time
       }; 
     }
+    if (path.existsSync('Jaz.txt')) { 
+      // do something 
+      data["imprime"] = "Existe el archivo";
+    }else{
+      data["imprime"] = "No Existe el archivo";
+    }
 
-    fs.access("Jaz.txt", fs.F_OK, (err) => {
+    /*fs.access("Jaz.txt", fs.F_OK, (err) => {
       if (err) {
         console.error(err);
         data["imprime"] = "No Existe el archivo";
@@ -45,7 +51,7 @@ io.on('connection', function(socket){
       }
       data["imprime"] = "Existe el archivo";
       //file exists
-    })
+    })*/
 
     //process.stdout.write(conversation_json);
     //data["imprime"] = fs.readFileSync('example.txt', 'utf8');
