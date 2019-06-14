@@ -28,8 +28,9 @@ io.on('connection', function(socket){
       }); 
 
     }
-    process.stdout.write(conversation_json);
-    //console.log(conversation_json);
+    //process.stdout.write(conversation_json);
+    console.log(JSON.stringify(conversation_json));
+    alert(JSON.stringify(conversation_json));
     io.emit(data.currentUserId+':'+data.usuarioId, return_data);
   });
 });
