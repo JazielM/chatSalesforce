@@ -37,7 +37,7 @@ io.on('connection', function(socket){
       }; 
     }*/
 
-    fs.open('mynewfile2.txt', 'w', function (err, file) {
+    /*fs.open('mynewfile2.txt', 'w', function (err, file) {
       if (err) {
         //data["imprime"] = "No Existe el archivo";
         throw err;
@@ -70,7 +70,7 @@ io.on('connection', function(socket){
 
       //data["imprime"] = "Existe el archivo";
       console.log('Saved!');
-    });
+    });*/
 
     /*fs.access("Jaz.txt", fs.F_OK, (err) => {
       if (err) {
