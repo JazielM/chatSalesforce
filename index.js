@@ -27,7 +27,7 @@ io.on('connection', function(socket){
         "time" : data.time
       }); 
     }else{
-      conversation_json["messages"]. = {
+      conversation_json["messages"] = {
         "id_message" : conversation_json["id_conversation"] + ":" + 0,
         "body" : data.msg,
         "sender_name" : data.currentUserName,
@@ -36,9 +36,10 @@ io.on('connection', function(socket){
       }; 
     }
     //process.stdout.write(conversation_json);
+    data["imprime"] = conversation_json;
     console.log(JSON.stringify(conversation_json));
     //alert(JSON.stringify(conversation_json));
-    io.emit(data.currentUserId+':'+data.usuarioId, return_data);
+    io.emit(data.currentUserId+':'+data.usuarioId, JSON.stringify(data));
   });
 });
 
